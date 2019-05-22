@@ -15,7 +15,7 @@ module.exports = {
     apiDomain,
     debug,
     cms: {
-        siteName: '博客',
+        // siteName: '博客',
         uid: 'news'
     }
 }

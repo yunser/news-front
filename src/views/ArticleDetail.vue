@@ -1,8 +1,10 @@
 <template>
     <my-page title="新闻详情" :page="page">
-        <h1 class="article-title">{{ article.title }}</h1>
-        <ui-article v-html="article.content">
-        </ui-article>
+        <div class="common-container container">
+            <h1 class="article-title">{{ article.title }}</h1>
+            <ui-article v-html="article.content">
+            </ui-article>
+        </div>
     </my-page>
 </template>
 
@@ -13,13 +15,13 @@
                 article: {},
                 page: {
                     menu: [
-                        {
-                            type: 'icon',
-                            icon: 'apps',
-                            href: 'https://app.yunser.com/',
-                            target: '_blank',
-                            title: '应用'
-                        }
+                        // {
+                        //     type: 'icon',
+                        //     icon: 'apps',
+                        //     href: 'https://app.yunser.com/',
+                        //     target: '_blank',
+                        //     title: '应用'
+                        // }
                         // {
                         //     type: 'icon',
                         //     icon: 'help',

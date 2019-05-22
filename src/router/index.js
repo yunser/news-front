@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const Home = resolve => require(['@/views/Home'], resolve)
+const SimpleWeapp = resolve => require(['@/views/SimpleWeapp'], resolve)
 const Simple = resolve => require(['@/views/Simple'], resolve)
-const About = resolve => require(['@/views/About'], resolve)
 const ArticleDetail = resolve => require(['@/views/ArticleDetail'], resolve)
+const TopList = resolve => require(['@/views/TopList'], resolve)
 const Error404 = resolve => require(['@/views/error/Error404'], resolve)
 
 Vue.use(Router)
@@ -12,12 +12,16 @@ Vue.use(Router)
 let routes = [
     {
         path: '/',
-        // redirect: '/simple'
-        component: Home
+        redirect: '/topList',
+        // component: Home
     },
     {
-        path: '/home',
-        component: Home
+        path: '/simple/weapp',
+        component: SimpleWeapp
+    },
+    {
+        path: '/topList',
+        component: TopList
     },
     {
         path: '/simple',
@@ -26,10 +30,6 @@ let routes = [
     {
         path: '/articles/:id',
         component: ArticleDetail
-    },
-    {
-        path: '/about',
-        component: About
     },
     {
         path: '*',
