@@ -1,16 +1,16 @@
 <template>
-    <my-page title="热榜" :page="page">
+    <my-page title="热榜详情" :page="page">
         <div class="common-container container">
-            <h2 class="section-title">所有热榜</h2>
+            <!-- <h2 class="section-title">微博热搜</h2> -->
             <div class="article-box">
                 <ul class="news-list">
                     <li class="item" v-for="article, index in articles">
-                        <router-link class="link" :to="`/topList/` + article.key">
-                            <!-- <div class="index">{{ index + 1 }}</div> -->
+                        <a class="link" :href="article.url" target="_blank">
+                            <div class="index">{{ index + 1 }}</div>
                             <div class="title">
                                 {{ article.title }}
                             </div>
-                        </router-link>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -31,6 +31,10 @@
                     totalPage: 1
                 },
                 articles: [],
+                articles2: [],
+                articles3: [],
+                articles4: [],
+                articles5: [],
                 page: {
                     menu: [
                         {
@@ -74,7 +78,8 @@
         },
         methods: {
             loadData() {
-                this.$http.get(`/site/subscribes`).then(
+                let { code } = this.$route.params
+                this.$http.get(`/site/subscribes/${code}`).then(
                     response => {
                         let data = response.data
                         this.articles = data
@@ -142,7 +147,7 @@
     .title {
         // margin-bottom: 16px;
         font-size: 16px;
-        // font-weight: bold;
+        font-weight: bold;
         color: #333;
     }
     .top {

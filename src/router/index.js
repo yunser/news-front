@@ -5,6 +5,7 @@ const SimpleWeapp = resolve => require(['@/views/SimpleWeapp'], resolve)
 const Simple = resolve => require(['@/views/Simple'], resolve)
 const ArticleDetail = resolve => require(['@/views/ArticleDetail'], resolve)
 const TopList = resolve => require(['@/views/TopList'], resolve)
+const TopDetail = resolve => require(['@/views/TopDetail'], resolve)
 const Error404 = resolve => require(['@/views/error/Error404'], resolve)
 
 Vue.use(Router)
@@ -22,6 +23,10 @@ let routes = [
     {
         path: '/topList',
         component: TopList
+    },
+    {
+        path: '/topList/:code',
+        component: TopDetail
     },
     {
         path: '/simple',
